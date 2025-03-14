@@ -1,15 +1,13 @@
 import { Admin, Resource } from "react-admin"
-import { MyLayout } from "./components/Layout";
+import { MyLayout } from "./screen/Layout";
+import { UserList } from "./screen/UserList";
+import { EventList } from "./screen/EventList";
+import { dataprovider } from "./data-provider";
 
-const User = () => {
-    return <h1>Users</h1>
+export const App = () => {
+    return (
+        <Admin layout={MyLayout} dataProvider={dataprovider}>
+            <Resource name='users' list={UserList} />
+            <Resource name='events' list={EventList} />
+        </Admin>);
 }
-
-const Event = () => {
-    return <h1>Events</h1>
-}
-
-export const App = () => <Admin layout={MyLayout}>
-    <Resource name = 'users'/>
-    <Resource name = 'events'/>
-</Admin>;
