@@ -1,6 +1,6 @@
 import { CreateParams, CreateResult, DataProvider, DeleteManyParams, DeleteManyResult, DeleteParams, DeleteResult, GetListParams, GetListResult, GetManyParams, GetManyReferenceParams, GetManyReferenceResult, GetManyResult, GetOneParams, GetOneResult, Identifier, QueryFunctionContext, RaRecord, UpdateManyParams, UpdateManyResult, UpdateParams, UpdateResult } from "react-admin";
 
-const url = "http://localhost:3000/events";
+const url = "http://localhost:1818/events";
 
 export const eventDataProvider = {
     getList: async function <RecordType extends RaRecord = any>(params: GetListParams & QueryFunctionContext): Promise<GetListResult<RecordType>> {
