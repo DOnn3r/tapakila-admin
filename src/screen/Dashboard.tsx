@@ -6,6 +6,7 @@ import { Box, CardActions, CardHeader, Grid, Typography } from "@mui/material";
 import { People } from "@mui/icons-material";
 import { TotalUser } from "./UserCard";
 import { TotalEvent } from "./EventsCard";
+import BasicBars from "./DashboardChart";
 
 export const Dashboard = () => (
     <Card>
@@ -55,5 +56,6 @@ export const Dashboard = () => (
                 </Card>*/}
             </Grid>
         </CardContent>
+        {/*<BasicBars/>*/}
     </Card>
 ); 

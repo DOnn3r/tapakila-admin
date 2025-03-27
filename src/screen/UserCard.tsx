@@ -29,7 +29,7 @@ export const TotalUser = () => {
     return (
         <Card sx={{ backgroundColor: '#FFFAFA', minWidth: 300, color: '#343434', 
                     borderLeft: '4px solid #00AB66',borderRight: '1px solid #343434', borderBottom: '1px solid #343434', 
-                    ":hover": {boxShadow: '10px 10px #0039a6'} }}>
+                    ":hover": {boxShadow: '10px 10px #0039a6',scale:1.1 , transitionDelay: `100ms`} }}>
             <Title/>
             <CardContent>
                 <Box display="flex" alignItems="center" marginBottom={2} sx={{ justifyContent: "space-between", }}>

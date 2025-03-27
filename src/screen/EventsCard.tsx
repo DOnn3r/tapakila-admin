@@ -1,4 +1,4 @@
-import { Event } from "@mui/icons-material";
+import { Event, Search } from "@mui/icons-material";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Title } from "react-admin";
@@ -26,10 +26,12 @@ export const TotalEvent = () => {
         fetchData();
     }, []);
     return (
-        <Card sx={{ backgroundColor: '#FFFAFA', minWidth: 300, color: '#343434', borderLeft: '4px solid #FF003F',
-                    borderRight: '1px solid #343434', borderBottom: '1px solid #343434', 
-                    ":hover": {boxShadow: '10px 10px #0039a6'} }}>
-            <Title/>
+        <Card sx={{
+            backgroundColor: '#FFFAFA', minWidth: 300, color: '#343434', borderLeft: '4px solid #FF003F',
+            borderRight: '1px solid #343434', borderBottom: '1px solid #343434',
+            ":hover": { transitionDelay: `100ms`, boxShadow: '10px 10px #0039a6', borderTop: '1px solid #343434', scale: 1.1 }
+        }}>
+            <Title />
             <CardContent>
                 <Box display="flex" alignItems="center" marginBottom={2} sx={{ justifyContent: "space-between", }}>
                     <Typography variant="h6" component="div">

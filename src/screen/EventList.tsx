@@ -3,8 +3,9 @@ import { Datagrid, DateField, List, TextField } from 'react-admin';
 
 export const EventList = () => {
   return (
-    <List >
+    <List>
       <Datagrid>
+        <TextField source='id' />
         <TextField source='name' />
         <TextField source='categorie'/>
         <DateField source='date_of_event' />

@@ -2,18 +2,36 @@ import { CreateParams, CreateResult, DataProvider, DeleteManyParams, DeleteManyR
 
 const url = "http://localhost:1818/events";
 
-export const eventDataProvider = {
-    getList: async function <RecordType extends RaRecord = any>(params: GetListParams & QueryFunctionContext): Promise<GetListResult<RecordType>> {
-        const data = await fetch(url, { method: 'GET' });
-        const eventsList = await data.json();
-    
+export const eventDataProvider: DataProvider = {
+    getList: async function <RecordType extends RaRecord = any>(resource: string, params: GetListParams & QueryFunctionContext): Promise<GetListResult<RecordType>> {
+        const data = await fetch(url, { method: "GET" });
+        const events = await data.json();
+
         return {
-          data: eventsList,
-          total: 10,
+            data: events,
+            total: 10,
+        }
+    },
+    getOne: async function <RecordType extends RaRecord = any>(
+        resource: string,
+        params: GetOneParams<RecordType> & QueryFunctionContext
+    ): Promise<GetOneResult<RecordType>> {
+        const { id } = params;
+        const response = await fetch(`${url}/${id}`, {method: 'GET'});
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const [event] = await response.json();
+
+        if (!event) {
+            throw new Error('Event not found');
+        }
+
+        return {
+            data: event
         };
-      },
-    getOne: function <RecordType extends RaRecord = any>(resource: string, params: GetOneParams<RecordType> & QueryFunctionContext): Promise<GetOneResult<RecordType>> {
-        throw new Error("Function not implemented.");
     },
     getMany: function <RecordType extends RaRecord = any>(resource: string, params: GetManyParams<RecordType> & QueryFunctionContext): Promise<GetManyResult<RecordType>> {
         throw new Error("Function not implemented.");
@@ -21,8 +39,14 @@ export const eventDataProvider = {
     getManyReference: function <RecordType extends RaRecord = any>(resource: string, params: GetManyReferenceParams & QueryFunctionContext): Promise<GetManyReferenceResult<RecordType>> {
         throw new Error("Function not implemented.");
     },
-    update: function <RecordType extends RaRecord = any>(resource: string, params: UpdateParams): Promise<UpdateResult<RecordType>> {
-        throw new Error("Function not implemented.");
+    update: async function <RecordType extends RaRecord = any>(resource: string, params: UpdateParams): Promise<UpdateResult<RecordType>> {
+        const {data: editedEvent ,id} = params;
+        const data = await fetch(`${url}/${id}`, {method: "POST", body: JSON.stringify(editedEvent)});
+        const event = await data.json();
+
+        return{
+            data: event,
+        };
     },
     updateMany: function <RecordType extends RaRecord = any>(resource: string, params: UpdateManyParams): Promise<UpdateManyResult<RecordType>> {
         throw new Error("Function not implemented.");
