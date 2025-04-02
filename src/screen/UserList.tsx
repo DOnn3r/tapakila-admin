@@ -1,14 +1,12 @@
-import { Button } from '@mui/material';
 import { Datagrid, List, TextField } from 'react-admin';
 
 export const UserList = () => {
   return (
-    <List>
+    <List exporter={false}>
       <Datagrid>
         <TextField source='id'/>
-        <TextField source='first_name' />
-        <TextField source='last_name' />
-        <TextField source='age' />
+        <TextField source='username' />
+        <TextField source='email' />
       </Datagrid>
     </List>
   );

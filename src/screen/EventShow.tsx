@@ -1,30 +1,35 @@
 import { ArrowBack } from '@mui/icons-material';
-import React from 'react';
-import { Button, DateField, Show, SimpleShowLayout, TextField, TopToolbar } from 'react-admin';
+import { Button, DateField, EditButton, Show, SimpleShowLayout, TextField, TopToolbar } from 'react-admin';
 import { useNavigate } from 'react-router';
 
+const EventShowActions = () => {
+    const redirect = useNavigate();
 
-const PostShowActions = () => {
-    const navigate = useNavigate();
     return (
         <TopToolbar>
             <Button
-                color="primary"
-                onClick={() => navigate(-1)}
+                sx={{
+                    backgroundColor: '#13274F',
+                    color: 'white',
+                }}
+                onClick={() => redirect(-1)}
                 startIcon={<ArrowBack />}
-            >Back</Button>
+            />
+
+            <EditButton />
         </TopToolbar>
     );
 };
 
-
 export const EventShow = () => {
     return (
-        <Show actions = {<PostShowActions/>}>
+        <Show actions={<EventShowActions />}>
             <SimpleShowLayout>
                 <TextField label='ID' source='id' />
-                <TextField source="name" />
+                <TextField source="title" />
                 <DateField label="Date of event" source="date_of_event" />
+                <TextField source="categorie" label="Category" />
+                <TextField source="location" />
             </SimpleShowLayout>
             <Button />
         </Show>

@@ -1,12 +1,10 @@
 import * as React from "react";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Button, Title } from 'react-admin';
-import { Box, CardActions, CardHeader, Grid, Typography } from "@mui/material";
-import { People } from "@mui/icons-material";
-import { TotalUser } from "./UserCard";
-import { TotalEvent } from "./EventsCard";
-import BasicBars from "./DashboardChart";
+import { Title } from 'react-admin';
+import {CardHeader, Grid } from "@mui/material";
+import { TotalEvent } from "../screen/EventsCard";
+import { TotalUser } from "../screen/UserCard";
 
 export const Dashboard = () => (
     <Card>
