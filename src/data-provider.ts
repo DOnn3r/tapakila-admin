@@ -1,6 +1,9 @@
 import { CreateParams, CreateResult, DataProvider, DeleteManyParams, DeleteManyResult, DeleteParams, DeleteResult, GetListParams, GetListResult, GetManyParams, GetManyReferenceParams, GetManyReferenceResult, GetManyResult, GetOneParams, GetOneResult, Identifier, QueryFunctionContext, RaRecord, UpdateManyParams, UpdateManyResult, UpdateParams, UpdateResult } from "react-admin";
 import { userDataProvider } from "./provider/userDataProvider";
 import { eventDataProvider } from "./provider/eventsDataProvider";
+import { statsDataProvider } from "./provider/statsDataProvider";
+import { financeDataProvider } from "./provider/financeDataProvider";
+
 
 const getDataProvider = (resource: string) => {
   switch (resource) {
@@ -8,6 +11,10 @@ const getDataProvider = (resource: string) => {
       return userDataProvider;
     case 'events':
       return eventDataProvider;
+    case 'stats/ticket-types':
+      return statsDataProvider;
+    case 'income':
+      return financeDataProvider;
     default:
       throw new Error('No data provider');
   }

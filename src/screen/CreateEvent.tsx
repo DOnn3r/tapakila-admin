@@ -7,10 +7,7 @@ const EditShowAction = () => {
     return (
         <TopToolbar>
             <Button
-                sx={{
-                    backgroundColor: '#13274F',
-                    color: 'white',
-                }}
+                color="primary"
                 onClick={() => navigate(-1)}
                 startIcon={<ArrowBack />}
             />
@@ -22,9 +19,6 @@ export const CreateEvent = () => {
     return (
         <Create redirect='/events' actions={<EditShowAction />}>
             <SimpleForm>
-                <ImageInput source="pictures" accept={{ 'image/*': ['.png', '.jpg'] }} placeholder={<p>Drop your file here</p>}>
-                    <ImageField source="src" title="title" />
-                </ImageInput>
                 <TextInput source="title" />
                 <DateInput source="date_of_event" defaultValue={new Date()} parse={value => new Date(value).toISOString()} />
                 <TextInput source="categorie" />

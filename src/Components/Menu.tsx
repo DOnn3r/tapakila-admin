@@ -3,9 +3,9 @@ import { Dashboard, Event, Person, } from '@mui/icons-material';
 
 export const MyMenu = () => (
     <Menu sx={{
-        backgroundColor: '#13274F', color: 'white !important', height: '100vh', display: 'flex', flexDirection: 'column'
+        backgroundColor: '#13274F', color: 'white !important', height: '100%', display: 'flex', flexDirection: 'column'
     }}>
-        <Menu.Item to="/" primaryText="Dashboard" leftIcon={<Dashboard sx={{ color: '#EEEEFF' }} />} sx={{
+        <Menu.Item to="/dashboard" primaryText="Dashboard" leftIcon={<Dashboard sx={{ color: '#EEEEFF' }} />} sx={{
             color: '#EEEEFF !important',
             '&:hover': {
                 color: '#0039a6 !important',

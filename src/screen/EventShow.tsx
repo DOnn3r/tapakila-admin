@@ -9,10 +9,9 @@ const EventShowActions = () => {
         <TopToolbar>
             <Button
                 sx={{
-                    backgroundColor: '#13274F',
-                    color: 'white',
+                    color: "primary",
                 }}
-                onClick={() => redirect(-1)}
+                onClick={() => redirect("/events")}
                 startIcon={<ArrowBack />}
             />
 
@@ -23,13 +22,17 @@ const EventShowActions = () => {
 
 export const EventShow = () => {
     return (
-        <Show actions={<EventShowActions />}>
+        <Show actions = {<EventShowActions/>}>
             <SimpleShowLayout>
                 <TextField label='ID' source='id' />
                 <TextField source="title" />
                 <DateField label="Date of event" source="date_of_event" />
                 <TextField source="categorie" label="Category" />
+                <TextField source='description'/>
                 <TextField source="location" />
+                <DateField source="available_of_ticket"/>
+                <TextField source="price"/>
+                <TextField source="type_of_ticket"/>
             </SimpleShowLayout>
             <Button />
         </Show>

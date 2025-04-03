@@ -23,14 +23,14 @@ export const eventDataProvider: DataProvider = {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const [event] = await response.json();
+        const event= await response.json();
 
         if (!event) {
             throw new Error('Event not found');
         }
 
         return {
-            data: event
+            data: event,
         };
     },
     getMany: function <RecordType extends RaRecord = any>(): Promise<GetManyResult<RecordType>> {
@@ -66,6 +66,7 @@ export const eventDataProvider: DataProvider = {
                 throw new Error(error.error || "Erreur serveur");
             }
 
+            // Le backend renvoie déjà { data: {...} }
             return await response.json();
 
         } catch (error) {

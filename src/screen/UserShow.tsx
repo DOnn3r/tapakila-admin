@@ -5,10 +5,9 @@ export const UserShow = () => {
     return (
         <Show>
             <SimpleShowLayout>
-                <TextField source='id' />
-                <TextField source='first_name' />
-                <TextField source='last_name' />
-                <NumberField source='age' />
+                <NumberField source='id' />
+                <TextField source='username' />
+                <TextField source='email' />
             </SimpleShowLayout>
         </Show>
     );

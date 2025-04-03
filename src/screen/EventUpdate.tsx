@@ -23,6 +23,7 @@ export const EventUpdate = () => {
                 <TextInput source='title' />
                 <DateInput source="date_of_event" />
                 <TextInput source="categorie" />
+                <TextInput source = "description"/>
                 <TextInput source="location" />
             </SimpleForm>
         </Edit>

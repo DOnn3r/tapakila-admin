@@ -27,7 +27,7 @@ export const TotalEvent = () => {
     }, []);
     return (
         <Card sx={{
-            backgroundColor: '#FFFAFA', minWidth: 300, color: '#343434', borderLeft: '4px solid #FF003F',
+            backgroundColor: '#F9F6EE', minWidth: 300, color: '#343434', borderLeft: '4px solid #FF003F',
             borderRight: '1px solid #343434', borderBottom: '1px solid #343434',
             ":hover": { transitionDelay: `100ms`, boxShadow: '10px 10px #0039a6', borderTop: '1px solid #343434', scale: 1.1 }
         }}>
