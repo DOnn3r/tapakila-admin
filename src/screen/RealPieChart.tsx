@@ -19,8 +19,8 @@ export const RealTicketPieChart = () => {
     return (
         <Card sx={{ maxWidth: 500 }}>
             <CardHeader
-                title="Répartition des billets"
-                subheader="Données en temps réel"
+                title="Ticket distribution"
+                subheader="Real-time data"
             />
             <CardContent>
                 <PieChart
@@ -35,9 +35,10 @@ export const RealTicketPieChart = () => {
                     height={300}
                     slotProps={{
                         legend: {
-                            position: { vertical: 'bottom', horizontal: 'middle' },
+                            hidden: true,
                         },
                     }}
+
                 />
             </CardContent>
         </Card>

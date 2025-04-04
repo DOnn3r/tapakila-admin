@@ -1,6 +1,6 @@
 import { CreateParams, CreateResult, DataProvider, DeleteManyParams, DeleteManyResult, DeleteParams, DeleteResult, fetchUtils, GetManyParams, GetManyReferenceParams, GetManyReferenceResult, GetManyResult, GetOneParams, GetOneResult, Identifier, QueryFunctionContext, RaRecord, UpdateManyParams, UpdateManyResult, UpdateParams, UpdateResult } from 'react-admin';
 
-const apiUrl = "http://localhost:1818/reservation/income"; // Remplacez par votre URL réelle
+const apiUrl = "http://localhost:1818/reservation/income";
 const httpClient = fetchUtils.fetchJson;
 
 export const financeDataProvider: DataProvider = {

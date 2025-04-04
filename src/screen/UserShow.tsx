@@ -1,9 +1,29 @@
+import { ArrowBack } from '@mui/icons-material';
 import React from 'react';
-import { NumberField, Show, SimpleShowLayout, TextField } from 'react-admin';
+import { Button, EditButton, NumberField, Show, SimpleShowLayout, TextField, TopToolbar } from 'react-admin';
+import { useNavigate } from 'react-router';
+
+const UserShowActions = () => {
+    const redirect = useNavigate();
+
+    return (
+        <TopToolbar>
+            <Button
+                sx={{
+                    color: "primary",
+                }}
+                onClick={() => redirect("/users")}
+                startIcon={<ArrowBack />}
+            />
+
+            <EditButton />
+        </TopToolbar>
+    );
+};
 
 export const UserShow = () => {
     return (
-        <Show>
+        <Show actions={<UserShowActions/>}>
             <SimpleShowLayout>
                 <NumberField source='id' />
                 <TextField source='username' />

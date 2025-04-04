@@ -7,6 +7,7 @@ import { TotalEvent } from "../screen/EventsCard";
 import { TotalUser } from "../screen/UserCard";
 import { RealTicketPieChart } from "../screen/RealPieChart";
 import { MonthlyIncomeChart } from "../screen/FinanceLineChart";
+import { Income } from "../screen/IncomeCard";
 
 export const Dashboard = () => (
     <Container sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -23,6 +24,7 @@ export const Dashboard = () => (
                     }}>
                     <TotalUser />
                     <TotalEvent />
+                    <Income/>
                 </Grid>
             </CardContent>
         </Card>

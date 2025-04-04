@@ -15,23 +15,23 @@ export const MonthlyIncomeChart = () => {
 
     return (
         <Card sx={{ p: 2 }}>
-            <Typography variant="h6">Revenus mensuels</Typography>
+            <Typography variant="h6">Mensual income</Typography>
             <LineChart
                 dataset={transformedData}
                 series={[
                     { 
                         dataKey: 'revenue', 
-                        label: 'Revenu (€)', 
+                        label: 'Income ($)', 
                         color: '#4CAF50' 
                     },
                     { 
                         dataKey: 'cost', 
-                        label: 'Coûts (€)', 
+                        label: 'Cost ($)', 
                         color: '#F44336' 
                     },
                     { 
                         dataKey: 'profit', 
-                        label: 'Profit (€)', 
+                        label: 'Profit ($)', 
                         color: '#2196F3' 
                     }
                 ]}

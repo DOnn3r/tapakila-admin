@@ -66,7 +66,6 @@ export const eventDataProvider: DataProvider = {
                 throw new Error(error.error || "Erreur serveur");
             }
 
-            // Le backend renvoie déjà { data: {...} }
             return await response.json();
 
         } catch (error) {

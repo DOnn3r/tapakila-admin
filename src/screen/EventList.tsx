@@ -3,7 +3,7 @@ import { Datagrid, DateField, List, SearchInput, TextField, TextInput} from 'rea
 
 export const EventList = () => {
   return (
-    <List exporter={false}>
+    <List exporter={false} pagination={false}> 
       <Datagrid bulkActionButtons={false}>
         <TextField source='id' />
         <TextField source='title' />

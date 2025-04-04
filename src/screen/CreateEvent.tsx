@@ -22,8 +22,14 @@ export const CreateEvent = () => {
                 <TextInput source="title" />
                 <DateInput source="date_of_event" defaultValue={new Date()} parse={value => new Date(value).toISOString()} />
                 <TextInput source="categorie" />
+                <TextInput source="description" />
                 <TextInput source="location" />
                 <DateInput label="Available of ticket" source="available_of_ticket" defaultValue={new Date()} parse={value => new Date(value).toISOString()} />
+                <TextInput source="img" label="Image"/>
+                <NumberInput source = "id_event"/>
+                <NumberInput source = "stock"/>
+                <NumberInput source = "price"/>
+                <TextInput source = "type_of_ticket" />
             </SimpleForm>
         </Create>
     )
